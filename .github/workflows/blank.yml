@@ -2,8 +2,8 @@ name: GitHub Actions Demo
 on:
   pull_request:
     type:
-      - opened
-      - edited
+      - labeled
+      - unlabeled
     branches:
       - develop
       - main
