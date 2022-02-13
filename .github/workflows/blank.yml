@@ -1,17 +1,17 @@
 name: GitHub Actions Demo
 on:
   pull_request:
-    types:
-      - labeled
-      - unlabeled
-
+    types: [opened, labeled, unlabeled]
+    branches:
+      - develop
+      - main
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     # if: "contains(toJSON(github.event.pull_request.labels.*.name), 'test')"
     steps:
       - run: echo get labels "${{toJSON(github.event.pull_request.labels.*.name)}}"
-      # - run: echo "${{contains( github.event.pull_request.labels.*.name, 'test')}}"
+      - run: echo "${{contains( github.event.pull_request.labels.*.name, 'test')}}"
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
