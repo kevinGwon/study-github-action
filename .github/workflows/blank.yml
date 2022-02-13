@@ -4,9 +4,9 @@ on:
     type:
       - labeled
       - unlabeled
-    branches:
-      - develop
-      - main
+    # branches:
+    #   - develop
+    #   - main
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
