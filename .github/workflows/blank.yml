@@ -6,7 +6,7 @@ on:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    # if: "contains(toJSON(github.event.pull_request.labels.*.name), 'test')"
+    if: "contains(toJSON(github.event.pull_request.labels.*.name), 'test')"
     steps:
       - run: echo get labels "${{toJSON(github.event.pull_request.labels.*.name)}}"
       - run: echo "${{contains(toJSON(github.event.pull_request.labels.*.name), 'test')}}"
