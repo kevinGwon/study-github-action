@@ -1,8 +1,14 @@
 name: GitHub Actions Demo
 on:
   pull_request:
-    types: [opened, synchronize, labeled, unlabeled]
-    branches: [main, develop]
+    types:
+      - opened
+      - synchronize
+      - labeled
+      - unlabeled
+    branches:
+      - main
+      - develop
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
